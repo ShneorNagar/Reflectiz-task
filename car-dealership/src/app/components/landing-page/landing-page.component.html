@@ -1,6 +1,14 @@
 <app-header></app-header>
 <video src="assets/volvo.webm" autoplay muted loop></video>
 <section class="form-container">
+  <ng-container
+    [ngTemplateOutlet]="!(formSubmitted$ | async) ? formRef : formCompletedRef"
+  ></ng-container>
+</section>
+<app-footer></app-footer>
+
+<!-- TEMPLATES -->
+<ng-template #formRef>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
       <div>
@@ -100,5 +108,17 @@
       <button mat-raised-button color="primary" type="submit">Submit</button>
     </div>
   </form>
-</section>
-<app-footer></app-footer>
+</ng-template>
+<ng-template #formCompletedRef>
+  <div class="form-completed">
+    <h1>Thank You!</h1>
+    <p>Your form has been successfully submitted. We appreciate your input.</p>
+    <p>
+      Our AI will now analyze your preferences and find the perfect matched car
+      for you.
+    </p>
+    <button mat-raised-button color="primary" (click)="onFillAnotherForm()">
+      Fill Another Form
+    </button>
+  </div>
+</ng-template>

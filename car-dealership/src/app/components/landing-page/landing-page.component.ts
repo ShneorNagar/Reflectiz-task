@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from 'src/app/services/users-data.service';
 import { UserData } from 'src/app/models/user-data.model';
+import { Subject } from 'rxjs';
 
 export interface Hobby {
   name: string;
@@ -13,10 +14,12 @@ export interface Hobby {
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingPageComponent {
   hobbies: Hobby[] = [];
   addOnBlur = true;
+  formSubmitted$: Subject<boolean> = new Subject<boolean>();
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
 
   form = new FormGroup({
@@ -81,5 +84,10 @@ export class LandingPageComponent {
   private resetForm() {
     this.hobbies = [];
     this.form.reset();
+    this.formSubmitted$.next(true);
+  }
+
+  onFillAnotherForm() {
+    this.formSubmitted$.next(false);
   }
 }
