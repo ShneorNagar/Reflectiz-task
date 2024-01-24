@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 export interface Hobby {
   name: string;
@@ -12,10 +13,35 @@ export interface Hobby {
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent {
-  color: string = '#000000';
   hobbies: Hobby[] = [];
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
+
+  form = new FormGroup({
+    name: new FormControl('', Validators.required),
+    gender: new FormControl('male', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    birthDate: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    country: new FormControl('', Validators.required),
+    hobbies: new FormControl([], Validators.required),
+    color: new FormControl('#000000'),
+    seats: new FormControl(2, Validators.min(2)),
+    motorType: new FormControl('electric'),
+  });
+
+  onSubmit() {
+    if (this.form.valid) {
+      // Form is valid, submit data
+
+      console.log(this.form.value);
+      this.hobbies = [];
+
+      // Reset form
+      this.form.reset();
+    }
+  }
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
