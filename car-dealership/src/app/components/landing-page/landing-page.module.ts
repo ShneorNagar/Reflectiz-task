@@ -10,11 +10,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { MatButtonModule } from '@angular/material/button';
 
 const ANGULAR_MATERIAL_MODULES = [
   MatRadioModule,
@@ -25,7 +25,8 @@ const ANGULAR_MATERIAL_MODULES = [
   MatInputModule,
   MatNativeDateModule,
   MatChipsModule,
-  MatIconModule
+  MatIconModule,
+  MatButtonModule,
 ];
 
 @NgModule({
@@ -35,7 +36,7 @@ const ANGULAR_MATERIAL_MODULES = [
     LandingPageRoutingModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
 })
 export class LandingPageModule {}
