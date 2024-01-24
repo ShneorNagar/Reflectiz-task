@@ -1,0 +1,16 @@
+:host {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 10% auto 10%;
+}
+
+.form-container {
+  form {
+    display: flex;
+    height: 100%;
+
+    > div {
+      width: 50%;
+    }
+  }
+}

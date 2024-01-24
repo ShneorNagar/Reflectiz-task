@@ -7,7 +7,7 @@ const routes: Routes = [{ path: '', component: LandingPageComponent }];
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), ],
   exports: [RouterModule],
 })
 export class LandingPageRoutingModule {}

@@ -1,1 +1,81 @@
-<p>landing-page works!</p>
+<header></header>
+<section class="form-container">
+  <form>
+    <div>
+      <mat-form-field class="input-name">
+        <input matInput placeholder="Full Name" />
+      </mat-form-field>
+
+      <mat-form-field class="input-email">
+        <input matInput type="email" placeholder="Email" />
+      </mat-form-field>
+
+      <mat-radio-group class="input-gender">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field class="input-date">
+        <input matInput [matDatepicker]="picker" placeholder="Birth Date" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- Location Details -->
+      <mat-form-field class="input-address">
+        <input matInput placeholder="Address" />
+      </mat-form-field>
+      <mat-form-field class="input-city">
+        <input matInput placeholder="City" />
+      </mat-form-field>
+      <mat-form-field class="input-country">
+        <input matInput placeholder="Country" />
+      </mat-form-field>
+
+      <!-- List of Hobbies -->
+      <mat-form-field class="example-chip-list" appearance="fill">
+        <mat-label>Hobbies</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter Hobby">
+          <mat-chip-row
+            *ngFor="let hobby of hobbies"
+            (removed)="remove(hobby)"
+            [editable]="true"
+            (edited)="edit(hobby, $event)"
+            [aria-description]="'press enter to edit ' + hobby.name"
+          >
+            {{ hobby.name }}
+            <button matChipRemove [attr.aria-label]="'remove ' + hobby.name">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+          <input
+            placeholder="New hobby..."
+            [matChipInputFor]="chipGrid"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)"
+          />
+        </mat-chip-grid>
+      </mat-form-field>
+      <!-- Add more checkboxes as needed -->
+
+      <!-- Favorite Color (using ngx-color-picker) -->
+      <input [(colorPicker)]="color" [style.background]="color" />
+
+      <!-- Required Amount of Seats -->
+      <mat-slider min="2" max="7" step="1" showTickMarks discrete>
+        <input matSliderThumb />
+      </mat-slider>
+
+      <!-- Motor Type -->
+      <mat-radio-group>
+        <mat-radio-button value="electric">Electric</mat-radio-button>
+        <mat-radio-button value="fuel">Fuel</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div>
+      <button mat-raised-button color="primary">Submit</button>
+    </div>
+  </form>
+</section>
+<footer></footer>
