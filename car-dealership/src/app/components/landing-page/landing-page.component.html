@@ -1,4 +1,4 @@
-<header></header>
+<app-header></app-header>
 <section class="form-container">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div>
@@ -81,9 +81,8 @@
         </mat-form-field>
       </div>
 
-      
       <div>
-        <input type="color" formControlName="color">
+        <input type="color" formControlName="color" />
 
         <mat-slider min="2" max="7" step="1" showTickMarks discrete>
           <input matSliderThumb formControlName="seats" />
@@ -100,4 +99,4 @@
     </div>
   </form>
 </section>
-<footer></footer>
+<app-footer></app-footer>

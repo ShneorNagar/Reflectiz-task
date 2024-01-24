@@ -1,10 +1,10 @@
 :host {
   height: 100%;
-  display: grid;
-  grid-template-rows: 10% auto 10%;
+  display: block;
 }
 
 .form-container {
+  height: 90vh;
   form {
     display: flex;
     height: 100%;

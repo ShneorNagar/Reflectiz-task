@@ -12,6 +12,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const ANGULAR_MATERIAL_MODULES = [
@@ -27,7 +29,7 @@ const ANGULAR_MATERIAL_MODULES = [
 ];
 
 @NgModule({
-  declarations: [LandingPageComponent],
+  declarations: [LandingPageComponent, HeaderComponent, FooterComponent],
   imports: [
     ANGULAR_MATERIAL_MODULES,
     LandingPageRoutingModule,
