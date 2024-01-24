@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UsersDataService } from 'src/app/services/users-data.service';
+import { UserData } from 'src/app/models/user-data.model';
 
 export interface Hobby {
   name: string;
@@ -31,15 +33,12 @@ export class LandingPageComponent {
     motorType: new FormControl('electric'),
   });
 
+  constructor(private usersDataService: UsersDataService) {}
+
   onSubmit() {
     if (this.form.valid) {
-      // Form is valid, submit data
-
-      console.log(this.form.value);
-      this.hobbies = [];
-
-      // Reset form
-      this.form.reset();
+      this.usersDataService.saveNewUser(this.form.value as UserData);
+      this.resetForm();
     }
   }
 
@@ -77,5 +76,10 @@ export class LandingPageComponent {
     if (index >= 0) {
       this.hobbies[index].name = value;
     }
+  }
+
+  private resetForm() {
+    this.hobbies = [];
+    this.form.reset();
   }
 }
