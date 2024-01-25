@@ -10,7 +10,7 @@
     "hobbies": ["reading", "gardening"],
     "color": "#3366cc",
     "seats": 4,
-    "motorType": "gasoline"
+    "motorType": "electric"
   },
   {
     "name": "Jane Smith",
@@ -23,7 +23,7 @@
     "hobbies": ["painting", "traveling"],
     "color": "#ff9900",
     "seats": 1,
-    "motorType": "hybrid"
+    "motorType": "electric"
   },
   {
     "name": "Alice Johnson",
@@ -49,7 +49,7 @@
     "hobbies": ["playing guitar", "cooking"],
     "color": "#663300",
     "seats": 2,
-    "motorType": "diesel"
+    "motorType": "fuel"
   },
   {
     "name": "Emily Turner",
@@ -62,7 +62,7 @@
     "hobbies": ["dancing", "hiking"],
     "color": "#cc3366",
     "seats": 4,
-    "motorType": "gasoline"
+    "motorType": "fuel"
   },
   {
     "name": "Mohammed Ali",
@@ -75,6 +75,6 @@
     "hobbies": ["boxing", "reading"],
     "color": "#006600",
     "seats": 1,
-    "motorType": "hybrid"
+    "motorType": "fuel"
   }
 ]

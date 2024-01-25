@@ -6,7 +6,7 @@ import { UsersDataService } from 'src/app/services/users-data.service';
 import { UserData } from 'src/app/models/user-data.model';
 import { Subject } from 'rxjs';
 
-export interface Hobby {
+interface Hobby {
   name: string;
 }
 
@@ -14,13 +14,13 @@ export interface Hobby {
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingPageComponent {
-  hobbies: Hobby[] = [];
-  addOnBlur = true;
-  formSubmitted$: Subject<boolean> = new Subject<boolean>();
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
+
+  hobbies: Hobby[] = [];
+  formSubmitted$: Subject<boolean> = new Subject<boolean>();
 
   form = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -45,19 +45,16 @@ export class LandingPageComponent {
     }
   }
 
-  add(event: MatChipInputEvent): void {
+  addHobby(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
-    // Add our fruit
     if (value) {
       this.hobbies.push({ name: value });
     }
-
-    // Clear the input value
     event.chipInput!.clear();
   }
 
-  remove(fruit: Hobby): void {
+  removeHobby(fruit: Hobby): void {
     const index = this.hobbies.indexOf(fruit);
 
     if (index >= 0) {
@@ -65,16 +62,14 @@ export class LandingPageComponent {
     }
   }
 
-  edit(fruit: Hobby, event: MatChipEditedEvent) {
+  editHobby(fruit: Hobby, event: MatChipEditedEvent) {
     const value = event.value.trim();
 
-    // Remove fruit if it no longer has a name
     if (!value) {
-      this.remove(fruit);
+      this.removeHobby(fruit);
       return;
     }
 
-    // Edit existing fruit
     const index = this.hobbies.indexOf(fruit);
     if (index >= 0) {
       this.hobbies[index].name = value;
