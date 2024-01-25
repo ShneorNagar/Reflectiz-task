@@ -42,3 +42,13 @@ app-line-chart-seats {
 app-users-data-table {
   grid-area: dataTable;
 }
+
+@media (max-width: 1200px) {
+  .data-container {
+    grid-template-areas:
+      "pieChart"
+      "barChart"
+      "lineChart"
+      "dataTable";
+  }
+}
