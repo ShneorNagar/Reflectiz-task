@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MatButtonModule } from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 const ANGULAR_MATERIAL_MODULES = [
   MatRadioModule,
@@ -27,6 +28,7 @@ const ANGULAR_MATERIAL_MODULES = [
   MatChipsModule,
   MatIconModule,
   MatButtonModule,
+  MatTooltipModule
 ];
 
 @NgModule({

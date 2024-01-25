@@ -28,6 +28,27 @@ video {
   }
 }
 
+.inputs-container {
+  background-color: rgb(255 255 255 / 40%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputs-sub-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-color {
+  width: 100px;
+  height: 33px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .form-completed {
-  
 }

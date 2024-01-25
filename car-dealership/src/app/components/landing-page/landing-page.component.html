@@ -10,19 +10,29 @@
 <!-- TEMPLATES -->
 <ng-template #formRef>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div>
-      <div>
+    <div class="inputs-container">
+      <div class="inputs-sub-group">
         <mat-form-field class="input-name">
           <input matInput placeholder="Full Name" formControlName="name" />
         </mat-form-field>
 
         <mat-radio-group formControlName="gender" class="input-gender">
-          <mat-radio-button value="male">Male</mat-radio-button>
-          <mat-radio-button value="female">Female</mat-radio-button>
+          <mat-radio-button
+            value="male"
+            matTooltip="Gender"
+            [matTooltipPosition]="'above'"
+            >Male</mat-radio-button
+          >
+          <mat-radio-button
+            value="female"
+            matTooltip="Gender"
+            [matTooltipPosition]="'above'"
+            >Female</mat-radio-button
+          >
         </mat-radio-group>
       </div>
 
-      <div>
+      <div class="inputs-sub-group">
         <mat-form-field class="input-email">
           <input
             matInput
@@ -47,7 +57,7 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="inputs-sub-group">
         <mat-form-field class="input-address">
           <input matInput placeholder="Address" formControlName="address" />
         </mat-form-field>
@@ -59,7 +69,7 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="inputs-sub-group">
         <mat-form-field class="input-hobbies" appearance="fill">
           <mat-label>Hobbies</mat-label>
           <mat-chip-grid
@@ -90,16 +100,40 @@
         </mat-form-field>
       </div>
 
-      <div>
-        <input type="color" formControlName="color" />
+      <div class="inputs-sub-group">
+        <input
+          class="input-color"
+          type="color"
+          formControlName="color"
+          matTooltip="Choose a color"
+          [matTooltipPosition]="'above'"
+        />
 
-        <mat-slider min="2" max="7" step="1" showTickMarks discrete>
+        <mat-slider
+          min="2"
+          max="7"
+          step="1"
+          showTickMarks
+          discrete
+          matTooltip="Seats Number"
+          [matTooltipPosition]="'above'"
+        >
           <input matSliderThumb formControlName="seats" />
         </mat-slider>
 
         <mat-radio-group formControlName="motorType">
-          <mat-radio-button value="electric">Electric</mat-radio-button>
-          <mat-radio-button value="fuel">Fuel</mat-radio-button>
+          <mat-radio-button
+            value="electric"
+            matTooltip="Engine Type"
+            [matTooltipPosition]="'above'"
+            >Electric</mat-radio-button
+          >
+          <mat-radio-button
+            value="fuel"
+            matTooltip="Engine Type"
+            [matTooltipPosition]="'above'"
+            >Fuel</mat-radio-button
+          >
         </mat-radio-group>
       </div>
     </div>

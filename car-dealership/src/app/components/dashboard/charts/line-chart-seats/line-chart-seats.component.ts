@@ -36,7 +36,7 @@ export class LineChartSeatsComponent implements OnInit {
         this.lineChartData.datasets = [
           {
             data: data.map((d) => d.seats),
-            label: 'Series A',
+            label: 'Seats Count By Age',
             fill: true,
             tension: 0.5,
             borderColor: 'black',
