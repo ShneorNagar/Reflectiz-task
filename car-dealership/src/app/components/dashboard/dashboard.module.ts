@@ -10,6 +10,7 @@ import { BarChartEngineComponent } from './charts/bar-chart-engine/bar-chart-eng
 import { UsersDataTableComponent } from './tables/users-data-table/users-data-table.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
     LineChartSeatsComponent,
     BarChartEngineComponent,
     UsersDataTableComponent,
-    
   ],
   imports: [
     CommonModule,
@@ -26,7 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     NgChartsModule,
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTooltipModule,
   ],
 })
 export class DashboardModule {}

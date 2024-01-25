@@ -1,23 +1,19 @@
 <table mat-table [dataSource]="tableDataSource" class="mat-elevation-z8">
-    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
     </ng-container>
   
-    <!-- Gender Column -->
     <ng-container matColumnDef="gender">
       <th mat-header-cell *matHeaderCellDef>Gender</th>
       <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
     </ng-container>
   
-    <!-- Email Column -->
     <ng-container matColumnDef="email">
       <th mat-header-cell *matHeaderCellDef>Email</th>
       <td mat-cell *matCellDef="let element">{{ element.email }}</td>
     </ng-container>
   
-    <!-- BirthDate Column -->
     <ng-container matColumnDef="birthDate">
       <th mat-header-cell *matHeaderCellDef>Birth Date</th>
       <td mat-cell *matCellDef="let element">
@@ -25,43 +21,36 @@
       </td>
     </ng-container>
   
-    <!-- Address Column -->
     <ng-container matColumnDef="address">
       <th mat-header-cell *matHeaderCellDef>Address</th>
       <td mat-cell *matCellDef="let element">{{ element.address }}</td>
     </ng-container>
   
-    <!-- City Column -->
     <ng-container matColumnDef="city">
       <th mat-header-cell *matHeaderCellDef>City</th>
       <td mat-cell *matCellDef="let element">{{ element.city }}</td>
     </ng-container>
   
-    <!-- Country Column -->
     <ng-container matColumnDef="country">
       <th mat-header-cell *matHeaderCellDef>Country</th>
       <td mat-cell *matCellDef="let element">{{ element.country }}</td>
     </ng-container>
   
-    <!-- Hobbies Column -->
     <ng-container matColumnDef="hobbies">
       <th mat-header-cell *matHeaderCellDef>Hobbies</th>
       <td mat-cell *matCellDef="let element">{{ element.hobbies.join(", ") }}</td>
     </ng-container>
   
-    <!-- Color Column -->
     <ng-container matColumnDef="color">
       <th mat-header-cell *matHeaderCellDef>Color</th>
       <td mat-cell *matCellDef="let element">{{ element.color }}</td>
     </ng-container>
   
-    <!-- Seats Column -->
     <ng-container matColumnDef="seats">
       <th mat-header-cell *matHeaderCellDef>Seats</th>
       <td mat-cell *matCellDef="let element">{{ element.seats }}</td>
     </ng-container>
   
-    <!-- Motor Type Column -->
     <ng-container matColumnDef="motorType">
       <th mat-header-cell *matHeaderCellDef>Motor Type</th>
       <td mat-cell *matCellDef="let element">{{ element.motorType }}</td>

@@ -2,15 +2,19 @@
   <button
     mat-fab
     color="primary"
-    aria-label="Example icon button with a home icon"
+    matTooltip="Home"
+    [matTooltipPosition]="'right'"
     (click)="onNavigateToHome()"
   >
     <mat-icon>home</mat-icon>
   </button>
+  <div class="title">
+    Dashboards
+  </div>
 </header>
 <div class="data-container">
-  <app-pie-chart-gender></app-pie-chart-gender>
-  <app-bar-chart-engine></app-bar-chart-engine>
-  <app-line-chart-seats></app-line-chart-seats>
+  <app-pie-chart-gender class="chart"></app-pie-chart-gender>
+  <app-bar-chart-engine class="chart"></app-bar-chart-engine>
+  <app-line-chart-seats class="chart"></app-line-chart-seats>
   <app-users-data-table></app-users-data-table>
 </div>
