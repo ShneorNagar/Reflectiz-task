@@ -1,3 +1,5 @@
+$formBgColor: rgb(255 255 255 / 40%);
+
 :host {
   height: 100%;
   display: block;
@@ -29,7 +31,8 @@ video {
 }
 
 .inputs-container {
-  background-color: rgb(255 255 255 / 40%);
+  padding: 20px;
+  background-color: $formBgColor;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -50,5 +53,21 @@ video {
   cursor: pointer;
 }
 
+.submit-btn {
+  width: 160px;
+  height: 60px;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
 .form-completed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $formBgColor;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
 }

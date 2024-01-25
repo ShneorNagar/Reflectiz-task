@@ -11,6 +11,7 @@
 <ng-template #formRef>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="inputs-container">
+      <h3>Customer Information:</h3>
       <div class="inputs-sub-group">
         <mat-form-field class="input-name">
           <input matInput placeholder="Full Name" formControlName="name" />
@@ -138,21 +139,22 @@
       </div>
     </div>
     <div class="submit-btn-container">
-      <!-- <button type="submit">Submit</button> -->
-      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button class="submit-btn" mat-raised-button color="primary" type="submit">Submit</button>
     </div>
   </form>
 </ng-template>
 <ng-template #formCompletedRef>
   <div class="form-completed">
-    <h1>Thank You!</h1>
-    <p>Your form has been successfully submitted. We appreciate your input.</p>
-    <p>
-      Our AI will now analyze your preferences and find the perfect matched car
-      for you.
-    </p>
-    <button mat-raised-button color="primary" (click)="onFillAnotherForm()">
-      Fill Another Form
-    </button>
+    <div>
+      <h1>Thank You!</h1>
+      <p>Your form has been successfully submitted. We appreciate your input.</p>
+      <p>
+        Our AI will now analyze your preferences and find the perfect matched car
+        for you.
+      </p>
+      <button mat-raised-button color="primary" (click)="onFillAnotherForm()">
+        Fill Another Form
+      </button>
+    </div>
   </div>
 </ng-template>
